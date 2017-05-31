@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="stockstemplate :: head">
+</head>
+<body>
+<div class="bdy">
+<div  th:replace="base :: top"></div>
+</div>
+<div class="container">
+
+    <div id="top" th:include="stockstemplate :: masthead"></div>
+
+    <div id="middle">
+<table class="table">
+	  <tr>
+	    <th>Stock Name</th>
+	    <th>Shares Owned</th> 
+	    <th>Current Price</th>
+	    <th>Total Value</th>
+	  </tr>
+	 
+
+	  <tr th:each="stock : ${portfolio}">
+	    <td th:text="${Stock.lookupStock(stock.key).toString()}">Stock Name</td> 
+	  	<td th:text="${stock.value.getSharesOwned()}">Shares Owned</td>  
+	  	<td th:text="${Stock.lookupStock(stock.key).getPrice()}">Current Price</td>
+	    <td th:text="${#numbers.formatDecimal(Stock.lookupStock(stock.key).getPrice()*stock.value.getSharesOwned(), 0, 'COMMA', 2, 'POINT')}">Total Value</td> 
+	    
+	  </tr>
+</table>
+<br></br>
+<table class="table">
+	  <tr>
+	    <th>UserName</th>
+	    <th>Cash Balance</th> 
+	  </tr>
+	 
+
+	  <tr>
+	    <td th:text="${user.getUserName()}">UserName</td> 
+	  	<td th:text="${user.getCash()}">Cash Balance</td>  
+	  </tr>
+</table>
+    </div>
+
+    <div th:replace="stockstemplate :: footer"></div>
+</div>
+</body>
+</html>

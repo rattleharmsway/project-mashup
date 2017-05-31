@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: head">
+	<title>JavaGram!</title>
+
+	    <meta charset="utf-8"/>
+	    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	
+	    <title>LaunchCode Projects!</title>
+	
+	    <!-- jQuery -->
+	    <script src="https://code.jquery.com/jquery-2.2.3.js"></script>
+	
+	    <!-- Bootstrap CSS -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous"></link>
+        <link th:href="@{/css/wordup.css}" rel="stylesheet" />
+        <style>
+        label > input{ /* HIDE RADIO */
+		  /*visibility: hidden; /* Makes input not-clickable */
+		  position: absolute; /* Remove input from document flow */
+		}
+		label > input + img{ /* IMAGE STYLES */
+		  cursor:pointer;
+		  border:2px solid transparent;
+		}
+		label > input:checked + img{ /* (RADIO CHECKED) IMAGE STYLES */
+		  border:2px solid #f00;
+		}
+        
+        </style>
+
+</head>
+<body>
+	<div class="bdy">
+	<div  th:replace="base :: top"></div>
+	</div>
+	<header class="jumbotron text-center">
+      <h1><strong>JavaGram!</strong></h1>
+    </header>
+	<form method="post">
+		<h1>Pic A Picture to Filter</h1>
+			  <label>
+			  <input type="radio" name="originalpicture" value="0" ></input>
+			  <img src="/img/0.jpg"></img>
+			  </label>
+			  <label>
+			  <input type="radio" name="originalpicture" value="1" ></input>
+			  <img src="/img/1.jpg"></img>
+			  </label>
+			  <label>
+			  <input type="radio" name="originalpicture" value="2" ></input>
+			  <img src="/img/2.jpg"></img>
+			  </label>
+			  <label>
+			  <input type="radio" name="originalpicture" value="3" ></input>
+			  <img src="/img/3.jpg"></img>
+			  </label>
+			  <label>
+			  <input type="radio" name="originalpicture" value="4" ></input>
+			  <img src="/img/4.jpg"></img>
+			  </label>
+			  <label>
+			  <input type="radio" name="originalpicture" value="5" ></input>
+			  <img src="/img/5.jpg"></img>
+			  </label>
+			  <label>
+			  <input type="radio" name="originalpicture" value="6" ></input>
+			  <img src="/img/6.jpg"></img>
+			  </label>
+			  <label>
+			  <input type="radio" name="originalpicture" value="7" ></input>
+			  <img src="/img/7.jpg"></img>
+			  </label>
+		<div></div>
+		<h1>Pick A Filter!</h1>
+			<select name="filter">
+			  <option value="0">BlueFilter</option>
+			   <option value="1">RedFilter</option>
+			  <option value="2">InvertFilter</option>
+			  <option value="3">BrightnessFilter</option>
+			  <option value="4">GrayScaleFilter</option>
+			  <option value="5">MonoChromeFilter</option>
+			  <option value="6">FlipHorizontalFilter</option>
+			</select>
+		<div></div>
+		<button type="submit">JavaGram!</button>
+	</form>
+
+</body>
+
+
+
+</html>

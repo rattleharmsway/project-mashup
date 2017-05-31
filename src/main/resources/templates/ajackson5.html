@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>The AJAXson 5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>   
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous"></link> -->
+    <link th:href="@{/css/address.css}" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../static/js/request-gif.js" th:src="@{/js/request-gif.js}"></script>
+    <style>
+        .invalid-field {
+            border: 1px solid red;
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+
+
+</head>
+<body>
+	<div class="bdy">
+	<div  th:replace="base :: top"></div>
+    <header class="jumbotron text-center">
+      <h1><strong>The AJAXson 5</strong></h1>
+    </header>
+  <div class="container-fluid">
+    <section>
+
+    <form id="form-gif-request">
+        <label>What kind of Jackson 5 related gif do you want?</label>
+        <input id="tag" name="tag" type="text" class="form-control" placeholder="e.g. 'dance'"/>
+        <p id="searchFeedback" hidden="true" class="error-message"></p>
+        <br></br>
+        <label>Prove you are not a robot by answering this riddle:</label>
+        <div class="panel-default">
+            <div class="input-group panel-heading">
+        <input id="captcha" name="captcha" type="text"  class="form-control"/>
+         <span class="input-group-addon">
+             <strong>Jacksons are better than 1.</strong>
+         </span>
+            </div>
+        </div>
+        <p id="captchaFeedback" hidden="true" class="error-message"></p>
+        <br></br>
+        <div class="row">
+        <button type="submit" class="btn btn-primary btn-block">Get my Gif!</button>
+        </div>
+    </form>
+    </section>
+    <br></br>
+    <p id="feedback" hidden="true"></p>
+    <div class="panel panel-default" >
+        <div class="panel-heading">
+
+    <img src="" id="gif" class="center-block img-responsive" hidden="true"/>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>

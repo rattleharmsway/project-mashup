@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+
+<head th:replace="stockstemplate :: head">
+</head>
+
+<body>
+<div class="bdy">
+<div  th:replace="base :: top"></div>
+</div>
+<div class="container">
+
+    <div id="top" th:include="stockstemplate :: masthead"></div>
+
+    <div id="middle">
+
+        <p>The current price of <b th:text="${stock_desc}">SYMBOL (NAME)</b> is $<b th:text="${stock_price}">PRICE</b>.</p>
+
+        <div th:replace="stocksquote_form :: form"></div>
+
+    </div>
+
+    <div th:replace="stockstemplate :: footer"></div>
+
+</div>
+
+</body>
+
+</html>

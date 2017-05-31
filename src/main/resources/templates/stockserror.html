@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="stockstemplate :: head">
+</head>
+<body>
+	<div class="bdy">
+	<div  th:replace="base :: top"></div>
+	</div>
+    <div class="container">
+        <div id="top" th:include="stockstemplate :: masthead"></div>
+        <div id="middle">
+            <p class="lead text-danger">
+                Sorry!
+            </p>
+            <p class="text-danger">
+                <span th:text="${message}">ERROR MESSAGE</span>
+            </p>
+            <a href="javascript:history.go(-1);">Back</a>
+        </div>
+        <div th:replace="stockstemplate :: footer"></div>
+    </div>
+</body>
+</html>

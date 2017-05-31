@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Your Moving Companion</title>
+    <link th:href="@{/css/address.css}" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="sha384-2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous"></link>
+    
+</head>
+<body>
+	<div class="bdy">
+	<div  th:replace="base :: top"></div>
+	<br></br>
+	<h2 id="greeting" class="greeting">Where do you want to live?</h2>
+    <form id="form-container" class="form-container">
+        <label for="street">Street: </label><input type="text" id="street" value=""></input>
+        <label for="city">City: </label><input type="text" id="city" value=""></input>
+        <button id="submit-btn">Submit</button>
+    </form>
+
+    <hr></hr>
+
+
+	<div></div>
+
+    <div class="wikipedia-container">
+        <h3 id="wikipedia-header">Relevant Wikipedia Links</h3>
+        <ul id="wikipedia-links"><li>Type in an address above and find relevant Wikipedia articles here!</li></ul>
+    </div>
+
+
+    <div class="nytimes-container">
+        <h3 id="nytimes-header">New York Times Articles</h3>
+        <ul id="nytimes-articles" class="article-list"><li>What's going on in your new city? Enter an address and hit submit and the NY Times will tell you here!</li></ul>
+    </div>
+
+    <script src="../static/js/jquery-1.11.1.min.js" th:src="@{/js/jquery-1.11.1.min.js}"></script>
+    <script src="../static/js/address.js" th:src="@{/js/address.js}"></script>
+	</div>
+</body>
+</html>
